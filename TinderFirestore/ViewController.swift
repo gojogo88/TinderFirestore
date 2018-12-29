@@ -16,7 +16,6 @@ class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
 //    let subviews = [UIColor.gray, UIColor.darkGray, UIColor.black].map { (color) -> UIView in
 //      let v = UIView()
 //      v.backgroundColor = color
