@@ -22,8 +22,8 @@ class HomeVC: UIViewController {
  */
   
   let cardViewModels = [
-    CardViewModel.userToCardViewModel(user: User(name: "kelly", age: 23, profession: "Music DJ", imageName: "lady5c")),
-    CardViewModel.userToCardViewModel(user: User(name: "Jane", age: 18, profession: "Teacher", imageName: "lady4c")),
+    CardViewModel.userToCardViewModel(user: User(name: "kelly", age: 23, profession: "Music DJ", imageNames: ["kelly1", "kelly2", "kelly3"])),
+    CardViewModel.userToCardViewModel(user: User(name: "Jane", age: 18, profession: "Teacher", imageNames: ["jane1", "jane2", "jane3"])),
     CardViewModel.advertiserToCardViewModel(advertiser: Advertiser(title: "Kit Kat", brandName: "Nestle", posterPhotoName: "pillow-book"))
 
     /*
