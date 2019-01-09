@@ -43,6 +43,7 @@ class HomeVC: UIViewController {
 //    let topStackView = UIStackView(arrangedSubviews: subviews)
 //    topStackView.distribution = .fillEqually
 //    topStackView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+    topStackView.settingsButton.addTarget(self, action: #selector(handleSettings), for: .touchUpInside)
     
     setupLayout()
     
@@ -92,6 +93,11 @@ class HomeVC: UIViewController {
  
     }
  */
+  }
+  
+  @objc func handleSettings() {
+    let registrationVC = RegistrationVC()
+    present(registrationVC, animated: true)
   }
   
 }

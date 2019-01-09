@@ -19,6 +19,8 @@
 		6C91476D21D6079C00217E72 /* TopNavigationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C91476C21D6079C00217E72 /* TopNavigationStackView.swift */; };
 		6C91476F21D60EF000217E72 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C91476E21D60EF000217E72 /* CardView.swift */; };
 		6CCC48E421D731FD00CB8619 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCC48E321D731FD00CB8619 /* User.swift */; };
+		6CFE62AB21E5A8F000C8A697 /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFE62AA21E5A8F000C8A697 /* RegistrationVC.swift */; };
+		6CFE62AD21E5AE1000C8A697 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFE62AC21E5AE1000C8A697 /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		6C91476C21D6079C00217E72 /* TopNavigationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavigationStackView.swift; sourceTree = "<group>"; };
 		6C91476E21D60EF000217E72 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		6CCC48E321D731FD00CB8619 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		6CFE62AA21E5A8F000C8A697 /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
+		6CFE62AC21E5AE1000C8A697 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				6C91475621D5F86A00217E72 /* HomeVC.swift */,
+				6CFE62AA21E5A8F000C8A697 /* RegistrationVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -102,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				6C91476721D5FAB400217E72 /* Extensions+UIView.swift */,
+				6CFE62AC21E5AE1000C8A697 /* CustomTextField.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -197,8 +203,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C91475721D5F86A00217E72 /* HomeVC.swift in Sources */,
+				6CFE62AD21E5AE1000C8A697 /* CustomTextField.swift in Sources */,
 				6C91475521D5F86A00217E72 /* AppDelegate.swift in Sources */,
 				6C12721021D7558200983A6B /* Advertiser.swift in Sources */,
+				6CFE62AB21E5A8F000C8A697 /* RegistrationVC.swift in Sources */,
 				6C91476B21D6028100217E72 /* HomeBottomControlStackView.swift in Sources */,
 				6C91476821D5FAB400217E72 /* Extensions+UIView.swift in Sources */,
 				6C12720E21D74A1800983A6B /* CardViewModel.swift in Sources */,
