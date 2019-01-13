@@ -13,6 +13,7 @@
 		6C68CA6221E5CB1500B7EBFA /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C68CA6121E5CB1500B7EBFA /* RegistrationViewModel.swift */; };
 		6C68CA6421E5F9C400B7EBFA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C68CA6321E5F9C400B7EBFA /* GoogleService-Info.plist */; };
 		6C68CA6621E6060600B7EBFA /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C68CA6521E6060600B7EBFA /* Bindable.swift */; };
+		6C8B0DE921EB1A8300677989 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8B0DE821EB1A8300677989 /* SettingsVC.swift */; };
 		6C91475521D5F86A00217E72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C91475421D5F86A00217E72 /* AppDelegate.swift */; };
 		6C91475721D5F86A00217E72 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C91475621D5F86A00217E72 /* HomeVC.swift */; };
 		6C91475A21D5F86A00217E72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C91475821D5F86A00217E72 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 		6C68CA6121E5CB1500B7EBFA /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		6C68CA6321E5F9C400B7EBFA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6C68CA6521E6060600B7EBFA /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
+		6C8B0DE821EB1A8300677989 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		6C91475121D5F86A00217E72 /* TinderFirestore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinderFirestore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C91475421D5F86A00217E72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C91475621D5F86A00217E72 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			children = (
 				6C91475621D5F86A00217E72 /* HomeVC.swift */,
 				6CFE62AA21E5A8F000C8A697 /* RegistrationVC.swift */,
+				6C8B0DE821EB1A8300677989 /* SettingsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				6C91476F21D60EF000217E72 /* CardView.swift in Sources */,
 				6C91476D21D6079C00217E72 /* TopNavigationStackView.swift in Sources */,
 				6CCC48E421D731FD00CB8619 /* User.swift in Sources */,
+				6C8B0DE921EB1A8300677989 /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -30,14 +30,14 @@ class CardViewModel: ProducesCardViewModel {
 
   fileprivate var imageIndex = 0 {
     didSet {
-      let imageName = imageNames[imageIndex]
-      let image = UIImage(named: imageName)
-      imageIndexObserver?(imageIndex, image)
+      let imageUrl = imageNames[imageIndex]
+      //let image = UIImage(named: imageName)
+      imageIndexObserver?(imageIndex, imageUrl)
     }
   }
   
   //reactive programming
-  var imageIndexObserver: ((Int, UIImage?) -> ())?
+  var imageIndexObserver: ((Int, String?) -> ())?
   
   func advanceToNextPhoto() {
     imageIndex = min(imageIndex + 1, imageNames.count - 1)
@@ -48,11 +48,13 @@ class CardViewModel: ProducesCardViewModel {
   }
   
   static func userToCardViewModel(user: User) -> CardViewModel {
-    let attributedText = NSMutableAttributedString(string: user.name, attributes: [.font: UIFont.systemFont(ofSize: 32, weight: .heavy)])
-    attributedText.append(NSAttributedString(string: " \(user.age)", attributes: [.font: UIFont.systemFont(ofSize: 24, weight: .regular)]))
-    attributedText.append(NSAttributedString(string: "\n\(user.profession)", attributes: [.font: UIFont.systemFont(ofSize: 20, weight: .regular)]))
+    let ageString = user.age != nil ? "\(user.age!)" : "n/a"
+    let professionString = user.profession != nil ? user.profession! : "Not available"
+    let attributedText = NSMutableAttributedString(string: user.name ?? "", attributes: [.font: UIFont.systemFont(ofSize: 32, weight: .heavy)])
+    attributedText.append(NSAttributedString(string: " \(ageString)", attributes: [.font: UIFont.systemFont(ofSize: 24, weight: .regular)]))
+    attributedText.append(NSAttributedString(string: "\n\(professionString)", attributes: [.font: UIFont.systemFont(ofSize: 20, weight: .regular)]))
     
-    return CardViewModel(imageNames: user.imageNames, attributedString: attributedText, textAlignment: .left)
+    return CardViewModel(imageNames: [user.imageUrl1 ?? ""], attributedString: attributedText, textAlignment: .left)
   }
   
   static func advertiserToCardViewModel(advertiser: Advertiser) -> CardViewModel {

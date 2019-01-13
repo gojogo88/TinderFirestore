@@ -10,10 +10,24 @@ import Foundation
 
 struct User {
   //defining our properties for our model layer
-  let name: String
-  let age: Int
-  let profession: String
-  let imageNames: [String]
+  var name: String?
+  var age: Int?
+  var profession: String?
+  //let imageNames: [String]
+  var imageUrl1: String?
+  var uid: String?
+  
+  init(dictionary: [String: Any]) {
+    //we'll initialize our users here
+    let name = dictionary["fullname"] as? String ?? ""
+    self.age = dictionary["age"] as? Int
+    self.profession = dictionary["profession"] as? String
+    self.name = name
+    
+  
+    self.imageUrl1 = dictionary["imageUrl1"] as? String ?? ""
+    self.uid = dictionary["uid"] as? String ?? ""
+  }
   
   /*
   func toCardViewModel() -> CardViewModel {
