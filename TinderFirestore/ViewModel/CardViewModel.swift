@@ -54,7 +54,12 @@ class CardViewModel: ProducesCardViewModel {
     attributedText.append(NSAttributedString(string: " \(ageString)", attributes: [.font: UIFont.systemFont(ofSize: 24, weight: .regular)]))
     attributedText.append(NSAttributedString(string: "\n\(professionString)", attributes: [.font: UIFont.systemFont(ofSize: 20, weight: .regular)]))
     
-    return CardViewModel(imageNames: [user.imageUrl1 ?? ""], attributedString: attributedText, textAlignment: .left)
+    var imageUrls = [String]()
+    if let url = user.imageUrl1 {imageUrls.append(url)}
+    if let url = user.imageUrl2 {imageUrls.append(url)}
+    if let url = user.imageUrl3 {imageUrls.append(url)}
+    
+    return CardViewModel(imageNames: imageUrls, attributedString: attributedText, textAlignment: .left)
   }
   
   static func advertiserToCardViewModel(advertiser: Advertiser) -> CardViewModel {
