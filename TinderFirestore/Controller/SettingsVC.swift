@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Firebase
+import SDWebImage
+import JGProgressHUD
 
 class CustomImagePickerController: UIImagePickerController {
   var imageButton: UIButton?
@@ -53,6 +56,8 @@ class SettingsVC: UITableViewController {
     return header
   }()
   
+  var user: User?
+  
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -61,6 +66,8 @@ class SettingsVC: UITableViewController {
     tableView.separatorStyle = .none
     //tableView.tableFooterView = UIView()  //to remove horizontal lines
     tableView.keyboardDismissMode = .interactive
+    
+    fetchCurrentUser()
   }
 
   // MARK: - Table view data source
@@ -104,10 +111,16 @@ class SettingsVC: UITableViewController {
     switch indexPath.section {
     case 1:
       cell.textField.placeholder = "Enter Name"
+      cell.textField.text = user?.name
     case 2:
       cell.textField.placeholder = "Enter Profession"
+      cell.textField.text = user?.profession
     case 3:
       cell.textField.placeholder = "Enter Age"
+      if let age = user?.age {
+        cell.textField.text = String(age)
+      }
+      
     default:
       cell.textField.placeholder = "Enter Bio"
     }
@@ -123,6 +136,30 @@ class SettingsVC: UITableViewController {
       UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(handleCancel)),
       UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleCancel))
     ]
+  }
+  
+  fileprivate func fetchCurrentUser() {
+    guard let uid = Auth.auth().currentUser?.uid else { return }
+    Firestore.firestore().collection("users").document(uid).getDocument { (snapshot, err) in
+      if let err = err {
+        print(err)
+        return
+      }
+      //fetch our user here
+      guard let dictionary = snapshot?.data() else { return }
+      self.user = User(dictionary: dictionary)
+      self.loadUserPhotos()
+      
+      self.tableView.reloadData()
+    }
+  }
+  
+  fileprivate func loadUserPhotos() {
+    guard let imageUrl = user?.imageUrl1, let url = URL(string: imageUrl) else { return }
+    SDWebImageManager.shared().loadImage(with: url, options: .continueInBackground, progress: nil) { (image, _, _, _, _, _) in
+      self.image1Button.setImage(image?.withRenderingMode(.alwaysOriginal), for: .normal)
+    }
+    
   }
   
   @objc fileprivate func handleCancel() {
